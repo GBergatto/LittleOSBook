@@ -27,9 +27,6 @@ mov esp, kernel_stack + KERNEL_STACK_SIZE
 loader: ; entrypoint in linker script
    mov eax, 0xCAFEBABE
 
-   push dword 3
-   push dword 2
-   push dword 1
    call kmain
 
 .loop: 

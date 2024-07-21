@@ -1,3 +1,7 @@
-int kmain(int arg1, int arg2, int arg3) {
-  return arg1 + arg2 + arg3;
+#include "framebuffer.h"
+
+int kmain() {
+  char w[] = "Test";
+  fb_write(w, 4);
+  return 0;
 }
