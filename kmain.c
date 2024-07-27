@@ -2,8 +2,9 @@
 #include "serial.h"
 
 int kmain() {
-  char w[] = "Test\nAAA\n";
-  fb_write(w, 4);
+  char w[] = "A\nB\nC\nD\nE\nF\nG\n";
+
+  fb_write(w, sizeof w);
   serial_write(w, sizeof w);
   return 0;
 }

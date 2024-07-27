@@ -18,6 +18,8 @@
  */
 void fb_move_cursor(unsigned short pos);
 
+#define FB_BLACK 0
+#define FB_BLUE 1
 #define FB_GREEN 2
 #define FB_DARK_GREY 8
 #define FRAMEBUFFER_ADDRESS 0x000B8000
