@@ -15,6 +15,8 @@
 /* Expect first the highest 8 bits on the data port, then the lowest 8 bits */
 #define SERIAL_LINE_ENABLE_DLAB 0x80
 
+typedef enum {DEBUG, INFO, ERROR} severity;
+
 /**
  * Sets the speed of the data being sent. The default speed of a serial
  * port is 115200 bits/s. The argument is a divisor of that number, hence
@@ -34,6 +36,8 @@ void serial_configure_baud_rate(unsigned short com, unsigned short divisor);
  */
 void serial_configure_line(unsigned short com);
 
+void serial_configure(unsigned short com, unsigned short divisor);
+
 /**
  * Checks whether the transmit FIFO queue is empty or not for the given COM
  * port.
@@ -51,6 +55,6 @@ int serial_is_transmit_fifo_empty(unsigned int com);
  * @param len
  * @return Number of characters written
  */
-void serial_write(char *buf, unsigned int len);
+void serial_write(severity level, char *buf, unsigned int len);
 
 #endif
